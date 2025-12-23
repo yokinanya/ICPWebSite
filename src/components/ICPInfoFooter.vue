@@ -17,28 +17,14 @@ const ICPCode = ref(import.meta.env.VITE_ICP_CODE)
   <footer>
     <p>
       <!-- ICP备案链接 -->
-      <a
-          :href="`https://beian.miit.gov.cn`"
-          target="_blank"
-      >
-        {{ ICPCode }}
+      <a :href="`https://beian.miit.gov.cn`" target="_blank">
+        {{ ICPCode }}&nbsp;
       </a>
       <!-- 公安备案链接 -->
-      <a
-          :href="`https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${PublicSecurityCode}`"
-          target="_blank"
-      >
+      <img src="/beian.png" class="el-image" style="width: 16px; height: 16px; object-fit: contain;">
+      <a :href="`https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${PublicSecurityCode}`" target="_blank">
         {{ PublicSecurityFullcode }}
       </a>
-
-      <!-- SSL 图标保持原样 -->
-      <span class="ssl-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-             stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-        </svg>
-      </span>
     </p>
   </footer>
 </template>
@@ -74,5 +60,4 @@ footer {
   font-size: 0.9rem;
   color: #999;
 }
-
 </style>
