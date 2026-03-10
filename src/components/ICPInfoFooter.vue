@@ -18,11 +18,11 @@ const ICPCode = ref(import.meta.env.VITE_ICP_CODE)
     <p>
       <!-- ICP备案链接 -->
       <a :href="`https://beian.miit.gov.cn`" target="_blank">
-        {{ ICPCode }}&nbsp;
+        {{ ICPCode }}<span v-if="PublicSecurityFullcode">&nbsp;</span>
       </a>
       <!-- 公安备案链接 -->
-      <img src="/beian.png" class="el-image" style="width: 16px; height: 16px; object-fit: contain;">
-      <a :href="`https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${PublicSecurityCode}`" target="_blank">
+      <img v-if="PublicSecurityFullcode" src="/beian.png" class="el-image" style="width: 16px; height: 16px; object-fit: contain;">
+      <a v-if="PublicSecurityFullcode" :href="`https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${PublicSecurityCode}`" target="_blank">
         {{ PublicSecurityFullcode }}
       </a>
     </p>
